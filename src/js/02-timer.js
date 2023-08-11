@@ -24,11 +24,8 @@ const options = {
         const currentDateMs = options.defaultDate.getTime();
         
         if ((selectedDatesMs - currentDateMs) < 0) {
-            Report.warning(
-                'Warning',
-                '"Please choose a date in the future"',
-                'Okay',
-                );
+            Notiflix.Notify.failure('Please choose a date in the future');
+                
             return
         }
         select = selectedDatesMs- currentDateMs;
